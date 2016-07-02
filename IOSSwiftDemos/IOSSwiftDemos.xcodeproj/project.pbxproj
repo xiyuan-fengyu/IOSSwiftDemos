@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79207DDF1D27A9EF0051C9B3 /* LoadingCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79207DDE1D27A9EF0051C9B3 /* LoadingCoverController.swift */; };
+		79207DE11D27AC290051C9B3 /* LoadingCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79207DE01D27AC290051C9B3 /* LoadingCoverView.swift */; };
 		79287DAC1D22C033000A966B /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79287DAB1D22C033000A966B /* UIViewExt.swift */; };
 		796818371D12EB9F001836F3 /* MajorColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796818361D12EB9F001836F3 /* MajorColorController.swift */; };
 		796995F41D12E30A002FC32B /* KMeanUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796995F31D12E30A002FC32B /* KMeanUtil.swift */; };
@@ -83,6 +85,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79207DDE1D27A9EF0051C9B3 /* LoadingCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCoverController.swift; sourceTree = "<group>"; };
+		79207DE01D27AC290051C9B3 /* LoadingCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCoverView.swift; sourceTree = "<group>"; };
 		79287DAB1D22C033000A966B /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		796818361D12EB9F001836F3 /* MajorColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorColorController.swift; sourceTree = "<group>"; };
 		796995F31D12E30A002FC32B /* KMeanUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMeanUtil.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			children = (
 				8E03634B1D1D030800F42189 /* XYRefreshView.swift */,
 				79E6841D1D21723500827CD4 /* CircleRefreshView.swift */,
+				79207DE01D27AC290051C9B3 /* LoadingCoverView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				8E0363441D1CD61900F42189 /* InputLengthLimitController.swift */,
 				8E0363491D1D023600F42189 /* RefreshViewController.swift */,
 				8E0363461D1CE41300F42189 /* CustomPullToRefreshController.swift */,
+				79207DDE1D27A9EF0051C9B3 /* LoadingCoverController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -498,6 +504,7 @@
 				8E7D34881D11579A00B21EA7 /* DemoListController.swift in Sources */,
 				8E0531C51D1BBAB90039592F /* SlideMenuTransition.swift in Sources */,
 				8E52D1861D1A99D800A7630E /* MaskController.swift in Sources */,
+				79207DE11D27AC290051C9B3 /* LoadingCoverView.swift in Sources */,
 				8E1D41081D12831D0008094C /* TabController.swift in Sources */,
 				796AAD771D1656D200DDC5A1 /* PullToRefreshController.swift in Sources */,
 				796995F41D12E30A002FC32B /* KMeanUtil.swift in Sources */,
@@ -531,6 +538,7 @@
 				8E7D344F1D1153D100B21EA7 /* AppDelegate.swift in Sources */,
 				8E0363451D1CD61900F42189 /* InputLengthLimitController.swift in Sources */,
 				8E80D4D01D13A4C500ABB17C /* TimerUtil.swift in Sources */,
+				79207DDF1D27A9EF0051C9B3 /* LoadingCoverController.swift in Sources */,
 				8E59B9621D17DE53009A2443 /* PhotoViewerController.swift in Sources */,
 				7980887E1D1546AB0087648F /* LocationController.swift in Sources */,
 				8E0531C91D1BD2B10039592F /* TumblrMenuController.swift in Sources */,

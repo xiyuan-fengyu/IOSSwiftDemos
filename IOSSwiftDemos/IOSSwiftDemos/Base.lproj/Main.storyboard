@@ -105,6 +105,7 @@
                         <segue destination="CNe-Ie-9Qa" kind="presentation" identifier="InputLengthLimit" id="fV0-2h-5Ld"/>
                         <segue destination="ZDS-Gi-gy2" kind="presentation" identifier="CustomPullToRefresh" id="tDw-tp-IsR"/>
                         <segue destination="HG7-1R-hlv" kind="presentation" identifier="RefreshView" id="3Rm-OH-Wzg"/>
+                        <segue destination="jO5-Ig-Jnd" kind="presentation" identifier="LoadingCover" id="v38-n8-stn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1593,6 +1594,52 @@
                 <exit id="b1p-YB-OfT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="8" y="2337"/>
+        </scene>
+        <!--Loading Cover Controller-->
+        <scene sceneID="d2K-1e-9iU">
+            <objects>
+                <viewController id="jO5-Ig-Jnd" customClass="LoadingCoverController" customModule="IOSSwiftDemos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z2y-3l-MBL"/>
+                        <viewControllerLayoutGuide type="bottom" id="E4g-S6-5ak"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gaS-hz-nAf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg4" translatesAutoresizingMaskIntoConstraints="NO" id="5mg-IO-MKZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZ0-fU-cN4">
+                                <rect key="frame" x="20" y="20" width="50" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="61T-2I-Ecw"/>
+                                    <constraint firstAttribute="width" constant="50" id="bwh-E2-FDv"/>
+                                </constraints>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="kpd-m7-ZCW" kind="unwind" unwindAction="backToDemoList:" id="LH2-jR-Xqs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bZ0-fU-cN4" firstAttribute="leading" secondItem="gaS-hz-nAf" secondAttribute="leading" constant="20" id="GV3-Xb-AdN"/>
+                            <constraint firstAttribute="trailing" secondItem="5mg-IO-MKZ" secondAttribute="trailing" id="HsK-X8-GV9"/>
+                            <constraint firstItem="bZ0-fU-cN4" firstAttribute="top" secondItem="z2y-3l-MBL" secondAttribute="bottom" id="LPW-p1-HWu"/>
+                            <constraint firstItem="5mg-IO-MKZ" firstAttribute="top" secondItem="gaS-hz-nAf" secondAttribute="top" id="TY0-Ci-lkO"/>
+                            <constraint firstItem="E4g-S6-5ak" firstAttribute="top" secondItem="5mg-IO-MKZ" secondAttribute="bottom" id="iwP-R1-Lz6"/>
+                            <constraint firstItem="5mg-IO-MKZ" firstAttribute="leading" secondItem="gaS-hz-nAf" secondAttribute="leading" id="qWk-B7-i6H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backBt" destination="bZ0-fU-cN4" id="8Uc-Kk-q0B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEr-Xe-GGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kpd-m7-ZCW" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="8" y="3137"/>
         </scene>
         <!--Slide Menu Controller-->
         <scene sceneID="Cfm-wN-41g">

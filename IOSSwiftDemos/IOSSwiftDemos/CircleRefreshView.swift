@@ -214,7 +214,7 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
     
     private var minDistance = CGFloat(M_PI * 2)
     
-    func refreshUpdate() {
+    @objc private func refreshUpdate() {
         angleSpeedIndex += 1
         angleSpeedIndex %= (indexRate * 2)
         
@@ -246,20 +246,20 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
     
-    func stopRefreshUpdate(offsetY: CGFloat) {
+    @objc private func stopRefreshUpdate(offsetY: CGFloat) {
         let radius = maxRadius * min(abs(offsetY), 100) / 100
         curEndAngle += CGFloat(M_PI * 0.02)
         drawCircle(radius, startAngle: curStartAngle, endAngle: curEndAngle, color: colorByAlpha(colors[curColorIndex], alphaPercent: radius / maxRadius))
     }
     
-    func update(offsetY: CGFloat) {
+    private func update(offsetY: CGFloat) {
         let radius = maxRadius * min(abs(offsetY), 100) / 100
         curEndAngle = CGFloat(M_PI * 2) * abs(offsetY) / 100 - CGFloat(M_PI / 3)
         let startAngle = curEndAngle - CGFloat(M_PI * 3 / 4) * abs(offsetY) / 100
         drawCircle(radius, startAngle: startAngle, endAngle: curEndAngle, color: colorByAlpha(colors[curColorIndex], alphaPercent: radius / maxRadius))
     }
     
-    func drawCircle(radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, color: UIColor) {
+    private func drawCircle(radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, color: UIColor) {
         let path = UIBezierPath(arcCenter: centerOfCircle, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         circleLayer.path = path.CGPath
         circleLayer.fillColor = UIColor.clearColor().CGColor
@@ -267,7 +267,7 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         circleLayer.lineWidth = CGFloat(6) * radius / size
     }
     
-    func colorByAlpha(color: UIColor, alphaPercent: CGFloat) -> UIColor {
+    private func colorByAlpha(color: UIColor, alphaPercent: CGFloat) -> UIColor {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0

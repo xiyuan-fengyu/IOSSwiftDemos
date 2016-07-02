@@ -11,8 +11,7 @@ import UIKit
 class DemoListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let demoData = [
-        Demo(name: "RefreshView", nameColor: "#50fc8a".toColor, describe: "自定义刷新动画的UIVIew"),
-        Demo(name: "CustomPullToRefresh", nameColor: "#3590fd".toColor, describe: "自定义下拉刷新的动画，当自定义View的实现里面用到NSTimer，CADisplayLink等会造成强引用环等情况，如何销毁资源，避免内存泄漏"),
+        Demo(name: "LoadingCover", nameColor: "#1efeb3".toColor, describe: "页面加载动画，会用到mask"),
         Demo(name: "StopWatch", nameColor: "#00ccff".toColor, describe: "秒表，子线程与主线程通信，子线程提醒主线程更新UI"),
         Demo(name: "Tab", nameColor: "#7a00b1".toColor, describe: "底部的Tab导航，设置TabBar的背景颜色透明性，TabBarItem的选中图标和标题的颜色设置"),
         Demo(name: "MajorColor", nameColor: "#49afcd".toColor, describe: "计算图片的主色调，采用KMean算法"),
@@ -31,6 +30,8 @@ class DemoListController: UIViewController, UITableViewDelegate, UITableViewData
         Demo(name: "UserPic", nameColor: "#fea464".toColor, describe: "用NavigationBar来实现一个向下弹出的菜单（实际是弹出了一个新的页面）,在代码里调用绑定到Exit的segue"),
         Demo(name: "OpenTumblrMenu", nameColor: "#55fb85".toColor, describe: "打开新的一个页面来显示菜单，菜单页面背景半透明，有模糊效果，可以隐约看到前一个被覆盖的页面，菜单项分别从两侧出现，向中间并拢"),
         Demo(name: "InputLengthLimit", nameColor: "#ffc88c".toColor, describe: "TextField输入字数限制"),
+        Demo(name: "RefreshView", nameColor: "#50fc8a".toColor, describe: "自定义刷新动画的UIVIew"),
+        Demo(name: "CustomPullToRefresh", nameColor: "#3590fd".toColor, describe: "自定义下拉刷新的动画，当自定义View的实现里面用到NSTimer，CADisplayLink等会造成强引用环等情况，如何销毁资源，避免内存泄漏"),
         
     ]
     
