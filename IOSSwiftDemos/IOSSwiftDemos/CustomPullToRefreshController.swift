@@ -31,10 +31,32 @@ class CustomPullToRefreshController: UIViewController, UITableViewDelegate, UITa
         testTbl.delegate = self
         testTbl.dataSource = self
         
-        circleRefreshView = CircleRefreshView(frame: CGRect(x: 0, y: -80, width: Int(self.view.frame.width), height: 80))
-//        circleRefreshView.backgroundColor = "#f0f0f0".toColor
+        //注意：需要在Controller的deinit中手动销毁circleRefreshView的资源(circleRefreshView.destory())，否则会出现内存泄漏
+        circleRefreshView = CircleRefreshView(scrollView: testTbl)//可选参数：height=80
+        
+        //设置背景颜色
+//        circleRefreshView.backgroundColor = 
+        
+        //设置圆环的色彩，下面的配置为默认配置
+//        circleRefreshView.setColors("#ff0000".toColor, "#fca009".toColor, "#47ff04".toColor, "#0be3fe".toColor, "#0948fd".toColor, "#ff3ee9".toColor)
+        
+        //设置不同阶段显示的文字，下面的配置和默认配置类似
+//        circleRefreshView.setLabelTexts([
+//            RefreshStatus.Initial: "pull more",
+//            .ReleaseToRefresh: "release to refresh",
+//            .GotoRefresh: "loading...",
+//            .Refreshing: "loading...",
+//            .GotoInitial: ""
+//            ])
+        
+        //设置文字的颜色，两种模式:特别设置，和圆圈保持一致;.Special(color: "#cccccc".toColor)为默认设置
+//        circleRefreshView.setLabelColorModel(LabelColorModel.Special(color: "#cccccc".toColor))
+//        circleRefreshView.setLabelColorModel(LabelColorModel.SameWithCircle)
+        
+        //设置文字的font，默认为UIFont.systemFontOfSize(12)
+//        circleRefreshView.setLabelFont(UIFont.systemFontOfSize(12))
+        
         circleRefreshView.setRefreshListener(self, action: #selector(self.refresh))
-        circleRefreshView.addTo(testTbl)
     }
     
     override func viewDidAppear(animated: Bool) {

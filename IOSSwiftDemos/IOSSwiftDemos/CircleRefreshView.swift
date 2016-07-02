@@ -10,9 +10,15 @@ import UIKit
 
 enum RefreshStatus {
     case Initial
+    case ReleaseToRefresh
     case GotoRefresh
     case Refreshing
     case GotoInitial
+}
+
+enum LabelColorModel {
+    case Special(color: UIColor)
+    case SameWithCircle
 }
 
 class CircleRefreshView: UIView, UIScrollViewDelegate {
@@ -23,19 +29,50 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
     
     private var circleLayer: CAShapeLayer!
     
+    private var label: UILabel!
+    
     private var centerOfCircle: CGPoint!
     
     private var isDragging: Bool = false
     
-    private var curRefreshStatus = RefreshStatus.Initial
+    private var curRefreshStatus = RefreshStatus.Initial {
+        didSet {
+            if let labelText = labelTextForRefreshStatus[curRefreshStatus] {
+                self.label.text = labelText
+            }
+            else {
+                self.label.text = ""
+            }
+        }
+    }
+    
+    private var labelTextForRefreshStatus: [RefreshStatus: String] = [
+        .Initial: "pull more",
+        .ReleaseToRefresh: "release to refresh",
+        .GotoRefresh: "loading...",
+        .Refreshing: "loading..."
+    ]
 
+    private var labelColorModel: LabelColorModel = .Special(color: "#cccccc".toColor)
+    
     private let minTimesOfHeightToRefresh: CGFloat = 1.5
     
     private var refreshDisplayLink: CADisplayLink! = nil
     
     private var colors: [UIColor] = ["#ff0000".toColor, "#fca009".toColor, "#47ff04".toColor, "#0be3fe".toColor, "#0948fd".toColor, "#ff3ee9".toColor]
     
-    override init(frame: CGRect) {
+    private var curColorIndex: Int = 0 {
+        didSet {
+            switch(labelColorModel) {
+            case .SameWithCircle:
+                self.label.textColor = colors[self.curColorIndex]
+            default: ()
+            }
+        }
+    }
+    
+    init(scrollView: UIScrollView, height: Int = 80) {
+        let frame = CGRect(x: 0, y: -height, width: Int(scrollView.superview!.frame.width), height: height)
         super.init(frame: frame)
         
         size = min(frame.width, frame.height) / 5
@@ -47,6 +84,16 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         circleLayer.anchorPoint = CGPointMake(0.5, 0.5)
         circleLayer.position = CGPointMake(frame.width / 2, frame.height / 2)
         self.layer.addSublayer(circleLayer)
+        
+        label = UILabel(frame: CGRect(x: 0, y: CGFloat(height / 2) + maxRadius, width: frame.width, height: CGFloat(height / 2) - maxRadius))
+        label.textAlignment = NSTextAlignment.Center
+        label.font = UIFont.systemFontOfSize(12)
+        setLabelColor()
+        self.addSubview(label)
+        
+        
+        scrollView.addObserver(self, forKeyPath: "contentOffset", options: NSKeyValueObservingOptions.init(rawValue: 0), context: nil)
+        scrollView.addSubview(self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,6 +106,31 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         }
     }
     
+    func setLabelTexts(texts: [RefreshStatus: String]) {
+        labelTextForRefreshStatus.removeAll()
+        for (key, value) in texts {
+           labelTextForRefreshStatus[key] = value
+        }
+    }
+    
+    func setLabelFont(font: UIFont) {
+        self.label.font = font
+    }
+    
+    func setLabelColorModel(model: LabelColorModel) {
+        self.labelColorModel = model
+        setLabelColor()
+    }
+    
+    private func setLabelColor() {
+        switch labelColorModel {
+        case .Special(let color):
+            label.textColor = color
+        default:
+            label.textColor = colors[curColorIndex]
+        }
+    }
+    
     private weak var refreshListener: AnyObject?
     
     private var refreshAction: Selector?
@@ -68,11 +140,6 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         refreshAction = action
     }
     
-    func addTo(scrollView: UIScrollView) {
-        scrollView.addObserver(self, forKeyPath: "contentOffset", options: NSKeyValueObservingOptions.init(rawValue: 0), context: nil)
-        scrollView.addSubview(self)
-    }
-    
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         let scrollView = object as! UIScrollView
         let y = scrollView.contentOffset.y
@@ -80,10 +147,17 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         if scrollView.dragging != isDragging {
             isDragging = scrollView.dragging
             if !isDragging {
-                if curRefreshStatus == .Initial && -y >= self.frame.height * minTimesOfHeightToRefresh {
+                if curRefreshStatus == .ReleaseToRefresh {
                     curRefreshStatus = .GotoRefresh
                 }
             }
+        }
+        
+        if curRefreshStatus == .Initial && -y >= self.frame.height * minTimesOfHeightToRefresh {
+            curRefreshStatus = .ReleaseToRefresh
+        }
+        else if curRefreshStatus == .ReleaseToRefresh && -y < self.frame.height * minTimesOfHeightToRefresh {
+            curRefreshStatus = .Initial
         }
         
         if curRefreshStatus == .GotoRefresh && -y <= self.frame.height {
@@ -91,12 +165,12 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
             startRefresh(false)
         }
         
-        if curRefreshStatus == .Initial || curRefreshStatus == .GotoRefresh {
+        if curRefreshStatus == .Initial || curRefreshStatus == .ReleaseToRefresh || curRefreshStatus == .GotoRefresh {
             update(y)
         }
         else if curRefreshStatus == .GotoInitial {
             stopRefreshUpdate(y)
-            if y >= -5 {
+            if y >= -10 && y < 0 {
                 curRefreshStatus = .Initial
                 curColorIndex = 0
                 angleSpeedIndex = 0
@@ -133,8 +207,6 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
     }
     
     private var angleSpeedIndex: Double = 0
-    
-    private var curColorIndex: Int = 0
     
     private let indexRate: Double = 60
     
