@@ -113,7 +113,7 @@ class LoadingCoverView: UIView {
     
     private var curPercent: CGFloat = 0
     
-    private let percentDelta: CGFloat = 0.005
+    private var percentDelta: CGFloat = 0.005
     
     private var dashStartPoint = CGPoint(x: 100, y: 100)
     
@@ -128,6 +128,10 @@ class LoadingCoverView: UIView {
     private let dashChangeRate = 12
     
     private var dashChangeIndex = 0
+    
+    func setSpeedScale(scale: CGFloat) {
+        percentDelta *= scale
+    }
     
     @objc private func loadingUpdate() {
         if !isRotating {

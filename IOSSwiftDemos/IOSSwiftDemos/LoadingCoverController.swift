@@ -30,6 +30,8 @@ class LoadingCoverController: UIViewController {
 //        loadingCover.setContainerColor("#40e0e0e0".toColor)
 //        //设置大小
 //        loadingCover.setScale(1)
+        //设置速度
+        loadingCover.setSpeedScale(1.5)
         loadingCover.addOnClickListener(self, action: #selector(self.stopLoading))
     }
     
