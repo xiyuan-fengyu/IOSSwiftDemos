@@ -10,18 +10,55 @@ import UIKit
 
 class LoadingCoverController: UIViewController {
 
-    @IBOutlet weak var backBt: UIButton!
-    
     private var loadingCover: LoadingCoverView!
+    
+    @IBAction func loadingBtClick(sender: AnyObject) {
+        //不显示cover
+        loadingCover.startLoading(false)
+        refresh()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadingCover = LoadingCoverView(root: self.view)
-        
-        self.view.bringSubviewToFront(backBt)
+        //设置cover层的背景色
+        loadingCover.backgroundColor = "#eeffffff".toColor
+//        //设置沙的颜色
+//        loadingCover.setSandColor("#0db8fe".toColor)
+//        //设置容器的颜色，一定要是透明色，否则看不到沙子那一层，容器壁的颜色为该颜色对应的完全不透明的颜色
+//        loadingCover.setContainerColor("#40e0e0e0".toColor)
+//        //设置大小
+//        loadingCover.setScale(1)
+        loadingCover.addOnClickListener(self, action: #selector(self.stopLoading))
+    }
+    
+    deinit {
+        loadingCover.destry()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //显示cover
+        loadingCover.startLoading()
+        refresh()
     }
 
+    private func refresh() {
+        //模拟网络加载导致的延时
+        NSThread(target: self, selector: #selector(self.loadData), object: nil).start()
+    }
+    
+    @objc func loadData() {
+        sleep(UInt32(8.arc4random + 5))
+        dispatch_async(dispatch_get_main_queue(), {
+            self.loadingCover.stopLoading()
+        })
+    }
+    
+    @objc func stopLoading() {
+        self.loadingCover.stopLoading()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

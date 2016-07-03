@@ -10,6 +10,7 @@
 		79207DDF1D27A9EF0051C9B3 /* LoadingCoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79207DDE1D27A9EF0051C9B3 /* LoadingCoverController.swift */; };
 		79207DE11D27AC290051C9B3 /* LoadingCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79207DE01D27AC290051C9B3 /* LoadingCoverView.swift */; };
 		79287DAC1D22C033000A966B /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79287DAB1D22C033000A966B /* UIViewExt.swift */; };
+		79651A851D290370000E9BB5 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79651A841D290370000E9BB5 /* UIColorExt.swift */; };
 		796818371D12EB9F001836F3 /* MajorColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796818361D12EB9F001836F3 /* MajorColorController.swift */; };
 		796995F41D12E30A002FC32B /* KMeanUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796995F31D12E30A002FC32B /* KMeanUtil.swift */; };
 		796AAD751D163ECD00DDC5A1 /* PagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AAD741D163ECD00DDC5A1 /* PagerController.swift */; };
@@ -88,6 +89,7 @@
 		79207DDE1D27A9EF0051C9B3 /* LoadingCoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCoverController.swift; sourceTree = "<group>"; };
 		79207DE01D27AC290051C9B3 /* LoadingCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCoverView.swift; sourceTree = "<group>"; };
 		79287DAB1D22C033000A966B /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		79651A841D290370000E9BB5 /* UIColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		796818361D12EB9F001836F3 /* MajorColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorColorController.swift; sourceTree = "<group>"; };
 		796995F31D12E30A002FC32B /* KMeanUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMeanUtil.swift; sourceTree = "<group>"; };
 		796AAD741D163ECD00DDC5A1 /* PagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				796AAD801D16733600DDC5A1 /* UILabelExt.swift */,
 				79287DAB1D22C033000A966B /* UIViewExt.swift */,
+				79651A841D290370000E9BB5 /* UIColorExt.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				8E0531BC1D1BA8F30039592F /* UserPicCell.swift in Sources */,
 				8E59B9661D17F3C6009A2443 /* VideoCutter.swift in Sources */,
 				79287DAC1D22C033000A966B /* UIViewExt.swift in Sources */,
+				79651A851D290370000E9BB5 /* UIColorExt.swift in Sources */,
 				8E5A5B241D12B77E0064C054 /* RandomUtil.swift in Sources */,
 				8E1D410B1D12872A0008094C /* StringUtil.swift in Sources */,
 				8E59B95C1D17BB6F009A2443 /* TimeUtil.swift in Sources */,

@@ -230,7 +230,7 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
             curColorIndex %= colors.count
         }
         
-        self.drawCircle(self.maxRadius, startAngle: curStartAngle, endAngle: self.curEndAngle, color: self.colorByAlpha(colors[curColorIndex], alphaPercent: 1))
+        self.drawCircle(self.maxRadius, startAngle: curStartAngle, endAngle: self.curEndAngle, color: colors[curColorIndex].byAlphaPercent(1))
     }
     
     func stopRefresh() {
@@ -249,14 +249,14 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
     @objc private func stopRefreshUpdate(offsetY: CGFloat) {
         let radius = maxRadius * min(abs(offsetY), 100) / 100
         curEndAngle += CGFloat(M_PI * 0.02)
-        drawCircle(radius, startAngle: curStartAngle, endAngle: curEndAngle, color: colorByAlpha(colors[curColorIndex], alphaPercent: radius / maxRadius))
+        drawCircle(radius, startAngle: curStartAngle, endAngle: curEndAngle, color: colors[curColorIndex].byAlphaPercent(radius / maxRadius))
     }
     
     private func update(offsetY: CGFloat) {
         let radius = maxRadius * min(abs(offsetY), 100) / 100
         curEndAngle = CGFloat(M_PI * 2) * abs(offsetY) / 100 - CGFloat(M_PI / 3)
         let startAngle = curEndAngle - CGFloat(M_PI * 3 / 4) * abs(offsetY) / 100
-        drawCircle(radius, startAngle: startAngle, endAngle: curEndAngle, color: colorByAlpha(colors[curColorIndex], alphaPercent: radius / maxRadius))
+        drawCircle(radius, startAngle: startAngle, endAngle: curEndAngle, color: colors[curColorIndex].byAlphaPercent(radius / maxRadius))
     }
     
     private func drawCircle(radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, color: UIColor) {
@@ -265,17 +265,6 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.strokeColor = color.CGColor
         circleLayer.lineWidth = CGFloat(6) * radius / size
-    }
-    
-    private func colorByAlpha(color: UIColor, alphaPercent: CGFloat) -> UIColor {
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var a: CGFloat = 0
-        
-        color.getRed(&r, green: &g, blue: &b, alpha: &a)
-        
-        return UIColor(red: r, green: g, blue: b, alpha: a * alphaPercent)
     }
     
     func destory() {
