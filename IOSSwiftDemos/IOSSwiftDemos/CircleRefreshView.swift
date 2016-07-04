@@ -265,6 +265,7 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.strokeColor = color.CGColor
         circleLayer.lineWidth = CGFloat(6) * radius / size
+        circleLayer.lineCap = kCALineCapRound
     }
     
     func destory() {
