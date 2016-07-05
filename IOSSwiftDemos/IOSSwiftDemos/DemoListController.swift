@@ -32,6 +32,7 @@ class DemoListController: UIViewController, UITableViewDelegate, UITableViewData
         Demo(name: "InputLengthLimit", nameColor: "#ffc88c".toColor, describe: "TextField输入字数限制"),
         Demo(name: "RefreshView", nameColor: "#50fc8a".toColor, describe: "自定义刷新动画的UIVIew"),
         Demo(name: "CustomPullToRefresh", nameColor: "#3590fd".toColor, describe: "自定义下拉刷新的动画，当自定义View的实现里面用到NSTimer，CADisplayLink等会造成强引用环等情况，如何销毁资源，避免内存泄漏"),
+        Demo(name: "LoadingCover", nameColor: "#1efeb3".toColor, describe: "页面加载动画，会用到mask"),
         
     ]
     
