@@ -8,8 +8,17 @@
 
 import UIKit
 
-class OpenLeftMenuController: UIViewController {
+class LeftMenuController: UIViewController {
 
+    
+    @IBAction func openMenuClick(sender: AnyObject) {
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: 414, height: 200))
+        v.backgroundColor = "#66ccff".toColor
+        self.view.window?.addSubview(v)
+        self.view.window?.bringSubviewToFront(v)
+        self.view.transform = CGAffineTransformMakeScale(0.5, 0.5)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

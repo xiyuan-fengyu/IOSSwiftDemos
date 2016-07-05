@@ -11,7 +11,7 @@ import UIKit
 class DemoListController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private let demoData = [
-        Demo(name: "LoadingCover", nameColor: "#1efeb3".toColor, describe: "页面加载动画，会用到mask"),
+        Demo(name: "LeftMenu", nameColor: "#ff890a".toColor, describe: "左侧拖出的菜单，右侧的内容在拖出过程中向右平移和缩小"),
         Demo(name: "StopWatch", nameColor: "#00ccff".toColor, describe: "秒表，子线程与主线程通信，子线程提醒主线程更新UI"),
         Demo(name: "Tab", nameColor: "#7a00b1".toColor, describe: "底部的Tab导航，设置TabBar的背景颜色透明性，TabBarItem的选中图标和标题的颜色设置"),
         Demo(name: "MajorColor", nameColor: "#49afcd".toColor, describe: "计算图片的主色调，采用KMean算法"),
