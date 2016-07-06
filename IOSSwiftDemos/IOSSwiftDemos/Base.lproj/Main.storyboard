@@ -106,7 +106,7 @@
                         <segue destination="ZDS-Gi-gy2" kind="presentation" identifier="CustomPullToRefresh" id="tDw-tp-IsR"/>
                         <segue destination="HG7-1R-hlv" kind="presentation" identifier="RefreshView" id="3Rm-OH-Wzg"/>
                         <segue destination="jO5-Ig-Jnd" kind="presentation" identifier="LoadingCover" id="v38-n8-stn"/>
-                        <segue destination="oND-pJ-8Me" kind="presentation" identifier="LeftMenu" id="ZXO-nM-g7Q"/>
+                        <segue destination="oND-pJ-8Me" kind="presentation" identifier="OpenLeftMenu" id="ZXO-nM-g7Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1707,10 +1707,10 @@
             </objects>
             <point key="canvasLocation" x="744" y="2337"/>
         </scene>
-        <!--Left Menu Controller-->
+        <!--Open Left Menu Controller-->
         <scene sceneID="zFS-7D-giT">
             <objects>
-                <viewController id="oND-pJ-8Me" customClass="LeftMenuController" customModule="IOSSwiftDemos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oND-pJ-8Me" customClass="OpenLeftMenuController" customModule="IOSSwiftDemos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5HF-Et-Oul"/>
                         <viewControllerLayoutGuide type="bottom" id="2ba-Ny-XI1"/>
