@@ -13,21 +13,20 @@ class OpenLeftMenuController: UIViewController {
     private var leftMenuController: LeftMenuController!
     
     @IBAction func openMenuClick(sender: AnyObject) {
-        self.view.window?.addSubview(leftMenuController.view)
-        leftMenuController.view.frame.origin.x = 100
-        leftMenuController.view.frame.origin.y = 100
+        leftMenuController.openMenu()
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         leftMenuController = LeftMenuController()
-        // Do any additional setup after loading the view.
+        leftMenuController.addTo(self)
     }
 
     override func viewWillDisappear(animated: Bool) {
-        self.leftMenuController.view.removeFromSuperview()
+        self.leftMenuController.destory()
         self.leftMenuController = nil
     }
     
