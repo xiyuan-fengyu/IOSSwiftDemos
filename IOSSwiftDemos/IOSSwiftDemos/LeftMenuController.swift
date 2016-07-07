@@ -14,6 +14,8 @@ class LeftMenuController: UIViewController {
     
     private var menuView: UIView!
     
+    private var menuWidth: CGFloat!
+    
     private var controller: UIViewController!
     
     override func viewDidLoad() {
@@ -23,7 +25,10 @@ class LeftMenuController: UIViewController {
         backImg.image = UIImage(named: "bg2")
         self.view.addSubview(backImg)
         
-        menuView = UIView(frame: CGRect(x: -300, y: 0, width: 300, height: self.view.frame.height))
+        menuWidth = self.view.frame.width * 0.7
+        
+        menuView = UIView(frame: CGRect(x: -menuWidth, y: 0, width: menuWidth, height: self.view.frame.height))
+        menuView.backgroundColor = "#99f0f0f0".toColor
         self.view.addSubview(menuView)
     }
     
@@ -35,7 +40,8 @@ class LeftMenuController: UIViewController {
     
     func openMenu() {
         self.menuView.frame.origin.x = 0
-        self.controller.view.frame.origin.x = 300
+        self.controller.view.frame.origin.x = menuWidth - self.controller.view.frame.width * 0.1
+        self.controller.view.transform = CGAffineTransformMakeScale(0.8, 0.8)
     }
     
     func destory() {
