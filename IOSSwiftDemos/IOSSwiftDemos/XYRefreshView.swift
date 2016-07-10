@@ -10,7 +10,7 @@ import UIKit
 
 class XYRefreshView: UIView {
 
-    private var size: CGFloat!
+    private var circleSize: CGFloat!
     
     private var maxRadius: CGFloat!
 
@@ -27,8 +27,8 @@ class XYRefreshView: UIView {
     init(frame: CGRect, color: UIColor) {
         super.init(frame: frame)
         
-        size = min(frame.width, frame.height) / 2
-        maxRadius = size / 2
+        circleSize = min(frame.width, frame.height) / 2
+        maxRadius = circleSize / 2
         
         var tempR: CGFloat = 0.0
         var tempG: CGFloat = 0.0
@@ -43,7 +43,7 @@ class XYRefreshView: UIView {
         var tempTime: CGFloat = 0.0
         for _ in 0..<layerNum {
             let tempLayer = CAShapeLayer()
-            tempLayer.bounds = CGRectMake(0, 0, size, size)
+            tempLayer.bounds = CGRectMake(0, 0, circleSize, circleSize)
             tempLayer.anchorPoint = CGPointMake(0.5, 0.5)
             tempLayer.position = self.center
             self.layer.addSublayer(tempLayer)

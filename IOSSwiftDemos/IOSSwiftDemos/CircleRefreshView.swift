@@ -23,7 +23,7 @@ enum LabelColorModel {
 
 class CircleRefreshView: UIView, UIScrollViewDelegate {
     
-    private var size: CGFloat!
+    private var circleSize: CGFloat!
     
     private var maxRadius: CGFloat!
     
@@ -75,12 +75,12 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         let frame = CGRect(x: 0, y: -height, width: Int(scrollView.superview!.frame.width), height: height)
         super.init(frame: frame)
         
-        size = min(frame.width, frame.height) / 5
-        maxRadius = size / 2
-        centerOfCircle = CGPointMake(size / 2, size / 2)
+        circleSize = min(frame.width, frame.height) / 5
+        maxRadius = circleSize / 2
+        centerOfCircle = CGPointMake(circleSize / 2, circleSize / 2)
         
         circleLayer = CAShapeLayer()
-        circleLayer.bounds = CGRectMake(0, 0, size, size)
+        circleLayer.bounds = CGRectMake(0, 0, circleSize, circleSize)
         circleLayer.anchorPoint = CGPointMake(0.5, 0.5)
         circleLayer.position = CGPointMake(frame.width / 2, frame.height / 2)
         self.layer.addSublayer(circleLayer)
@@ -264,7 +264,7 @@ class CircleRefreshView: UIView, UIScrollViewDelegate {
         circleLayer.path = path.CGPath
         circleLayer.fillColor = UIColor.clearColor().CGColor
         circleLayer.strokeColor = color.CGColor
-        circleLayer.lineWidth = CGFloat(6) * radius / size
+        circleLayer.lineWidth = CGFloat(6) * radius / circleSize
         circleLayer.lineCap = kCALineCapRound
     }
     

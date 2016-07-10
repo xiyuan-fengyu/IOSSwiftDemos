@@ -18,14 +18,13 @@
 		796AAD791D16598900DDC5A1 /* NewsPagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AAD781D16598900DDC5A1 /* NewsPagerCell.swift */; };
 		796AAD7B1D16599A00DDC5A1 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AAD7A1D16599A00DDC5A1 /* NewsCell.swift */; };
 		796AAD811D16733600DDC5A1 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796AAD801D16733600DDC5A1 /* UILabelExt.swift */; };
-		797121581D2D3A8D008F29E9 /* LeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797121571D2D3A8D008F29E9 /* LeftMenuController.swift */; };
 		798088741D151D5D0087648F /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798088731D151D5D0087648F /* GalleryController.swift */; };
 		798088761D1525240087648F /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798088751D1525240087648F /* DemoCell.swift */; };
 		7980887A1D15315A0087648F /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798088791D15315A0087648F /* GalleryCell.swift */; };
 		7980887C1D15462A0087648F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7980887B1D15462A0087648F /* CoreLocation.framework */; };
 		7980887E1D1546AB0087648F /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980887D1D1546AB0087648F /* LocationController.swift */; };
-		7983D8741D2C022E00230157 /* OpenLeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983D8731D2C022E00230157 /* OpenLeftMenuController.swift */; };
 		79CCCE5A1D32094F00C999D7 /* LeftSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCE591D32094F00C999D7 /* LeftSlideMenuController.swift */; };
+		79CCCE5C1D322DE300C999D7 /* TestLeftSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCE5B1D322DE300C999D7 /* TestLeftSlideMenuController.swift */; };
 		79E6841E1D21723500827CD4 /* CircleRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6841D1D21723500827CD4 /* CircleRefreshView.swift */; };
 		8E0363451D1CD61900F42189 /* InputLengthLimitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0363441D1CD61900F42189 /* InputLengthLimitController.swift */; };
 		8E0363471D1CE41300F42189 /* CustomPullToRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0363461D1CE41300F42189 /* CustomPullToRefreshController.swift */; };
@@ -100,14 +99,13 @@
 		796AAD781D16598900DDC5A1 /* NewsPagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsPagerCell.swift; sourceTree = "<group>"; };
 		796AAD7A1D16599A00DDC5A1 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		796AAD801D16733600DDC5A1 /* UILabelExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
-		797121571D2D3A8D008F29E9 /* LeftMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuController.swift; sourceTree = "<group>"; };
 		798088731D151D5D0087648F /* GalleryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
 		798088751D1525240087648F /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
 		798088791D15315A0087648F /* GalleryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		7980887B1D15462A0087648F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7980887D1D1546AB0087648F /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
-		7983D8731D2C022E00230157 /* OpenLeftMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenLeftMenuController.swift; sourceTree = "<group>"; };
 		79CCCE591D32094F00C999D7 /* LeftSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSlideMenuController.swift; sourceTree = "<group>"; };
+		79CCCE5B1D322DE300C999D7 /* TestLeftSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLeftSlideMenuController.swift; sourceTree = "<group>"; };
 		79E6841D1D21723500827CD4 /* CircleRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleRefreshView.swift; sourceTree = "<group>"; };
 		8E0363441D1CD61900F42189 /* InputLengthLimitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLengthLimitController.swift; sourceTree = "<group>"; };
 		8E0363461D1CE41300F42189 /* CustomPullToRefreshController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPullToRefreshController.swift; sourceTree = "<group>"; };
@@ -324,9 +322,8 @@
 				8E0363491D1D023600F42189 /* RefreshViewController.swift */,
 				8E0363461D1CE41300F42189 /* CustomPullToRefreshController.swift */,
 				79207DDE1D27A9EF0051C9B3 /* LoadingCoverController.swift */,
-				7983D8731D2C022E00230157 /* OpenLeftMenuController.swift */,
-				797121571D2D3A8D008F29E9 /* LeftMenuController.swift */,
 				79CCCE591D32094F00C999D7 /* LeftSlideMenuController.swift */,
+				79CCCE5B1D322DE300C999D7 /* TestLeftSlideMenuController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -525,7 +522,6 @@
 				8E7D34901D1161FD00B21EA7 /* StopWatchController.swift in Sources */,
 				79CCCE5A1D32094F00C999D7 /* LeftSlideMenuController.swift in Sources */,
 				8E5A5B221D12A38C0064C054 /* UIImageUtil.swift in Sources */,
-				797121581D2D3A8D008F29E9 /* LeftMenuController.swift in Sources */,
 				796818371D12EB9F001836F3 /* MajorColorController.swift in Sources */,
 				8E0531C21D1BB6B10039592F /* SlideMenuCell.swift in Sources */,
 				8E0531C71D1BD0F00039592F /* OpenTumblrMenuController.swift in Sources */,
@@ -542,8 +538,8 @@
 				8E5A5B241D12B77E0064C054 /* RandomUtil.swift in Sources */,
 				8E1D410B1D12872A0008094C /* StringUtil.swift in Sources */,
 				8E59B95C1D17BB6F009A2443 /* TimeUtil.swift in Sources */,
-				7983D8741D2C022E00230157 /* OpenLeftMenuController.swift in Sources */,
 				8E59B9551D178B9D009A2443 /* PlayMusicController.swift in Sources */,
+				79CCCE5C1D322DE300C999D7 /* TestLeftSlideMenuController.swift in Sources */,
 				8E0531C01D1BB65F0039592F /* SlideMenuController.swift in Sources */,
 				8E59B9641D17F378009A2443 /* VideoBgController.swift in Sources */,
 				8E80D4E01D13D23200ABB17C /* PlayVideoController.swift in Sources */,
