@@ -25,6 +25,7 @@
 		7980887C1D15462A0087648F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7980887B1D15462A0087648F /* CoreLocation.framework */; };
 		7980887E1D1546AB0087648F /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7980887D1D1546AB0087648F /* LocationController.swift */; };
 		7983D8741D2C022E00230157 /* OpenLeftMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983D8731D2C022E00230157 /* OpenLeftMenuController.swift */; };
+		79CCCE5A1D32094F00C999D7 /* LeftSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CCCE591D32094F00C999D7 /* LeftSlideMenuController.swift */; };
 		79E6841E1D21723500827CD4 /* CircleRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E6841D1D21723500827CD4 /* CircleRefreshView.swift */; };
 		8E0363451D1CD61900F42189 /* InputLengthLimitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0363441D1CD61900F42189 /* InputLengthLimitController.swift */; };
 		8E0363471D1CE41300F42189 /* CustomPullToRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0363461D1CE41300F42189 /* CustomPullToRefreshController.swift */; };
@@ -106,6 +107,7 @@
 		7980887B1D15462A0087648F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7980887D1D1546AB0087648F /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		7983D8731D2C022E00230157 /* OpenLeftMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenLeftMenuController.swift; sourceTree = "<group>"; };
+		79CCCE591D32094F00C999D7 /* LeftSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSlideMenuController.swift; sourceTree = "<group>"; };
 		79E6841D1D21723500827CD4 /* CircleRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleRefreshView.swift; sourceTree = "<group>"; };
 		8E0363441D1CD61900F42189 /* InputLengthLimitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputLengthLimitController.swift; sourceTree = "<group>"; };
 		8E0363461D1CE41300F42189 /* CustomPullToRefreshController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPullToRefreshController.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				79207DDE1D27A9EF0051C9B3 /* LoadingCoverController.swift */,
 				7983D8731D2C022E00230157 /* OpenLeftMenuController.swift */,
 				797121571D2D3A8D008F29E9 /* LeftMenuController.swift */,
+				79CCCE591D32094F00C999D7 /* LeftSlideMenuController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				8E0531BE1D1BB5BF0039592F /* UserPicController.swift in Sources */,
 				8E80D4D21D13BD1400ABB17C /* ChangeFontController.swift in Sources */,
 				8E7D34901D1161FD00B21EA7 /* StopWatchController.swift in Sources */,
+				79CCCE5A1D32094F00C999D7 /* LeftSlideMenuController.swift in Sources */,
 				8E5A5B221D12A38C0064C054 /* UIImageUtil.swift in Sources */,
 				797121581D2D3A8D008F29E9 /* LeftMenuController.swift in Sources */,
 				796818371D12EB9F001836F3 /* MajorColorController.swift in Sources */,
